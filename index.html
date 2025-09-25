@@ -101,7 +101,7 @@
 
 @media (max-width: 600px) {
   #countdown {
-    padding-top: ; /* less vertical space on mobile */
+    padding-top: 15vh; /* less vertical space on mobile */
     background-position: center top;
     background-size: 100% 100%, contain; /* image fills width */
     padding-left: 10px;
@@ -110,10 +110,11 @@
 
   #countdown span {
     font-size: 1em;
-    padding: 10px;
+    padding-top: 10px;
     max-width: 95%;
+    background-color: #482026;
     background-position: center;
-    color: #482026;
+    color: white;
   }
 
   .intro {
@@ -159,7 +160,7 @@
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
       document.getElementById("countdown").innerHTML =
-  `<span>Countdown to Arrival of our... 🍼🌙🌸💕SYHA kutiiii💕🌸🌙🍼 <br><br>${days} days ${hours} hrs ${minutes} mins ${seconds} secs</span>`;
+  `<span>Countdown to Arrival of our 🍼🌙🌸💕SYHA kutiiii💕🌸🌙🍼 <br><br>${days} days ${hours} hrs ${minutes} mins ${seconds} secs</span>`;
 
     }
 
@@ -172,6 +173,7 @@
   </script>
 </body>
 </html>
+
 
 
 
