@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome Syha</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .intro {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #fce4ec;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      z-index: 10;
+      font-size: 5em;
+      font-weight: bold;
+      color: #ff4081;
+      letter-spacing: 0.2em;
+      transition: opacity 1.5s ease;
+    }
+
+    .style{
+      font-size: 3em;
+      margin-bottom: 0.5em;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    .letter {
+      opacity: 0;
+      transform: scale(0.5);
+      animation: popIn 0.5s forwards;
+    }
+
+    .letter:nth-child(1) { animation-delay: 0.5s; }
+    .letter:nth-child(2) { animation-delay: 1s; }
+    .letter:nth-child(3) { animation-delay: 1.5s; }
+    .letter:nth-child(4) { animation-delay: 2s; }
+
+    @keyframes popIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+#countdown {
+  opacity: 0;
+  height: 100vh;
+  background: 
+    linear-gradient(to right, #482026 8%, transparent 55%, #482026 100%),
+    url('SA.png') no-repeat center center fixed;
+  background-size: 100% 100%, 70%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #333;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  padding: 20px;
+  padding-top: 30vh;
+  transition: opacity 1.5s ease;
+  position: relative;
+}
+
+
+#countdown::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(255, 255, 255, 0.3); /* lighter overlay */
+  z-index: -1;
+}
+
+
+#countdown span {
+  
+  padding: 30px;
+  border-radius: 20px;
+  background: linear-gradient(to bottom right, rgba(255, 192, 203, 0), rgba(255, 255, 255, 0));
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  font-size: 1.8em;
+  color: white;
+  max-width: 90%;
+  line-height: 1.4;
+  backdrop-filter: blur(6px);
+}
+
+  </style>
+</head>
+<body>
+  <div class="intro" id="intro">
+    <span class="letter">S</span>
+    <span class="letter">Y</span>
+    <span class="letter">H</span>
+    <span class="letter">A</span>
+  </div>
+
+  <div id="countdown"></div>
+
+  <script>
+    const targetDate = new Date("April 14, 2026 00:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        document.getElementById("countdown").innerHTML = "🎉 Baby is here!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+  `<span>Countdown to Arrival of our 🍼🌙🌸💕SYHA kutiiii💕🌸🌙🍼 <br><br>${days} days ${hours} hrs ${minutes} mins ${seconds} secs</span>`;
+
+    }
+
+    setTimeout(() => {
+      document.getElementById("intro").style.opacity = 0;
+      document.getElementById("countdown").style.opacity = 1;
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
+    }, 3000); // after name animation
+  </script>
+</body>
+</html>
