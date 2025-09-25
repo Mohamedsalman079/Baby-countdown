@@ -100,6 +100,20 @@
 }
 
 @media (max-width: 600px) {
+  #countdown {
+    padding-top: 15vh; /* less vertical space on mobile */
+    background-position: center top;
+    background-size: 100% 100%, contain; /* image fills width */
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  #countdown span {
+    font-size: 1.2em;
+    padding: 20px;
+    max-width: 95%;
+  }
+
   .intro {
     font-size: 2.5em;
     flex-direction: column;
@@ -108,32 +122,9 @@
   }
 
   .letter {
-    font-size: 1.2em;
-  }
-
-  #countdown {
-    padding-top: 10vh;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-size: 100% auto, cover;
-    background-position: center top;
-    background-attachment: scroll;
-    overflow-y: auto;
-  }
-
-  #countdown span {
-    font-size: 1.1em;
-    padding: 15px;
-    max-width: 100%;
-    line-height: 1.3;
-  }
-
-  body {
-    overflow-y: auto;
+    font-size: 1em;
   }
 }
-
-
 
 
   </style>
@@ -166,7 +157,7 @@
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
       document.getElementById("countdown").innerHTML =
-  `<span>Countdown to Arrival of our new 🍼🌙🌸💕SYHA kutiiii💕🌸🌙🍼 <br><br>${days} days ${hours} hrs ${minutes} mins ${seconds} secs</span>`;
+  `<span>Countdown to Arrival of our 🍼🌙🌸💕SYHA kutiiii💕🌸🌙🍼 <br><br>${days} days ${hours} hrs ${minutes} mins ${seconds} secs</span>`;
 
     }
 
@@ -179,6 +170,3 @@
   </script>
 </body>
 </html>
-
-
-
